@@ -1,5 +1,6 @@
 binder_call(system_server, hal_camera_default)
 binder_call(system_server, hal_tetheroffload_default)
+binder_call(system_server, hal_graphics_composer)
 
 allow system_server wlan_device:chr_file rw_file_perms;
 
@@ -28,3 +29,4 @@ allow system_server sysfs_rtc:{ file lnk_file } r_file_perms;
 allow system_server sysfs_kgsl_gpu_model:file r_file_perms;
 
 dontaudit system_server vfat:dir r_dir_perms;
+hal_client_domain(system_server, hal_sensors)

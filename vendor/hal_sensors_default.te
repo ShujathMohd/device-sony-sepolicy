@@ -1,11 +1,39 @@
-# interact with the sensors low power island (SLPI) CPU
-qrtr_socket_create(hal_sensors_default)
-# TODO (b/deprecate-old-ipc-router): Remove 4.9 ipc-router compatibility `socket' when kernel 4.14 is final
-allowxperm hal_sensors_default self:socket ioctl msm_sock_ipc_ioctls;
+userdebug_or_eng(`
+    diag_use(hal_sensors)
+    get_prop(hal_sensors, sensors_dbg_prop)
+')
+
+no_debugfs_restriction(`
+  userdebug_or_eng(`
+    allow hal_sensors debugfs_tracing:file { open write };
+  ')
+')
+
+set_prop(hal_sensors, slpi_prop);
+
+allow hal_sensors self:{ socket qipcrtr_socket } create_socket_perms;
+allowxperm hal_sensors self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+
+# Allow access to ion memory allocation device
+allow hal_sensors ion_device:chr_file rw_file_perms;
+allow hal_sensors hal_graphics_allocator:fd use;
+
+# Allow access to FastRPC
+allow hal_sensors qdsp_device:chr_file r_file_perms;
+
+allow hal_sensors input_device:dir r_dir_perms;
+allow hal_sensors input_device:chr_file r_file_perms;
+
+allow hal_sensors_default sysfs_msm_subsys:dir search;
+allow hal_sensors_default sysfs_msm_subsys:file w_file_perms;
+
+allow hal_sensors_default hal_graphics_mapper_hwservice:hwservice_manager find;
+
+get_prop(hal_sensors_default, sensors_prop)
+get_prop(hal_sensors_default, adsprpc_prop);
 
 rw_diag_device(hal_sensors_default)
 
-r_dir_file(hal_sensors_default, sysfs_msm_subsys);
 allow hal_sensors_default sysfs_esoc:dir r_dir_perms;
 
 # read and write factory calibration and sensor configuration data

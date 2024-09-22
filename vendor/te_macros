@@ -46,3 +46,24 @@ userdebug_or_eng(`
 # Ignore in user builds
 dontaudit $1 diag_device:chr_file rw_file_perms;
 ')
+
+#####################################
+# diag_use(clientdomain)
+# allow clientdomain to read/write to diag
+define(`diag_use', `
+r_dir_file($1, sysfs_diag)
+allow $1 diag_device:chr_file rw_file_perms;
+')
+
+########################################
+# peripheral_manager
+# Allow clients to interact with peripheral
+# manager
+define(`use_vendor_per_mgr', `
+vndbinder_use($1);
+binder_call(vendor_per_mgr, $1);
+binder_call($1, vendor_per_mgr);
+allow $1 vendor_per_mgr_service:service_manager find;
+get_prop($1, vendor_per_mgr_state_prop);
+')
+

@@ -51,3 +51,8 @@ ctl.vendor.qcrild          u:object_r:vendor_ctl_qcrild_prop:s0
 
 # Qmipriod
 persist.vendor.data.qmipriod_load u:object_r:vendor_data_qmipriod_prop:s0
+vendor.fastrpc.                  u:object_r:adsprpc_prop:s0
+
+# Debug Sensors
+persist.vendor.debug.sensors.             u:object_r:sensors_dbg_prop:s0
+vendor.slpi.               u:object_r:slpi_prop:s0

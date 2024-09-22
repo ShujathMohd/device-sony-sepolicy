@@ -28,3 +28,6 @@ type wc_prop, vendor_property_type, property_type;
 type vendor_data_shsusr_prop, vendor_property_type, property_type;
 type vendor_ctl_qcrild_prop, vendor_property_type, property_type;
 type vendor_data_qmipriod_prop, vendor_property_type, property_type;
+vendor_restricted_prop(adsprpc_prop)
+vendor_restricted_prop(sensors_dbg_prop);
+vendor_restricted_prop(slpi_prop)

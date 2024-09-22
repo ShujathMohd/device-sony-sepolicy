@@ -28,3 +28,5 @@ type xbl_block_device, dev_type;
 type wlan_device, dev_type;
 type vbmeta_block_device, dev_type;
 type hvdcp_opti_device, dev_type;
+type device_latency, dev_type;
+type dsp_device, dev_type;

@@ -56,6 +56,7 @@
 /dev/socket/ipacm_log_file                      u:object_r:ipacm_socket:s0
 /dev/socket/ims_datad                           u:object_r:ims_socket:s0
 /dev/socket/dpmd                                u:object_r:dpmd_socket:s0
+/dev/socket/sensor_ctl_socket                   u:object_r:sensors_socket:s0
 
 # files in /odm
 /odm/bin/hw/vendor\.qti\.spu@1\.0-service                         u:object_r:spu_exec:s0
@@ -105,8 +106,6 @@
 /odm/bin/rmt_storage                            u:object_r:rmt_storage_exec:s0
 /odm/bin/shsusrd                                u:object_r:shsusrd_exec:s0
 /odm/bin/sct_service                            u:object_r:sct_exec:s0
-/odm/bin/sensors\.qcom                          u:object_r:sensors_exec:s0
-/odm/bin/sensors-qesdk                          u:object_r:sensors_exec:s0
 /odm/bin/sony-modem-switcher                    u:object_r:modemsw_exec:s0
 /odm/bin/sscrpcd                                u:object_r:sscrpcd_exec:s0
 /odm/bin/tad_static                             u:object_r:tad_exec:s0
@@ -145,6 +144,8 @@
 /(system/vendor|vendor)/bin/hw/vendor\.qti\.hardware\.display\.allocator-service             u:object_r:hal_graphics_allocator_default_exec:s0
 /(system/vendor|vendor)/bin/hw/vendor\.qti\.hardware\.display\.composer-service              u:object_r:hal_graphics_composer_default_exec:s0
 /(system/vendor|vendor)/bin/hw/vendor\.qti\.hardware\.vibrator@1\.2-service                  u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/sensors.qcom					             u:object_r:sensors_exec:s0
+/(vendor|system/vendor)/bin/sensors.qti							     u:object_r:sensors_exec:s0
 
 # sysfs paths
 # Input device control nodes, mainly for CASH to control power
