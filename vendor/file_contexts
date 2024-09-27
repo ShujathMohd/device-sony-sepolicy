@@ -143,8 +143,9 @@
 /(system/vendor|vendor)/bin/hw/vendor\.qti\.hardware\.display\.allocator-service             u:object_r:hal_graphics_allocator_default_exec:s0
 /(system/vendor|vendor)/bin/hw/vendor\.qti\.hardware\.display\.composer-service              u:object_r:hal_graphics_composer_default_exec:s0
 /(system/vendor|vendor)/bin/hw/vendor\.qti\.hardware\.vibrator@1\.2-service                  u:object_r:hal_vibrator_default_exec:s0
-/(vendor|system/vendor)/bin/sensors.qcom					             u:object_r:sensors_exec:s0
-/(vendor|system/vendor)/bin/sensors.qti							     u:object_r:sensors_exec:s0
+/(vendor|system/vendor)/bin/sensors.qcom					              u:object_r:sensors_exec:s0
+/(vendor|system/vendor)/bin/sensors.qti						      u:object_r:sensors_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service          u:object_r:hal_sensorscalibrate_qti_default_exec:s0
 
 # sysfs paths
 # Input device control nodes, mainly for CASH to control power
