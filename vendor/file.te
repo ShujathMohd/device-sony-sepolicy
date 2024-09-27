@@ -106,3 +106,4 @@ type proc_kernel_printk, proc_type, fs_type;
 type proc_swappiness, proc_type, fs_type;
 
 type sensors_socket, file_type;
+type thermal_link_device, dev_type;
